@@ -28,9 +28,11 @@ Route::get('/users/new', function(){
 });
 
 Route::get('/saludo/{name}/{nickname?}', function($name, $nickname=null){
+	// Primera letra del nombr e en mayusculas
+	// $name = ucfirst($name);
 	if($nickname){
 		return "Welcome: {$name} your nickname is: {$nickname}";
 	}else{
-		return "Welcome: {$name} you don't have nickname";
+		return "Welcome: {$name}";
 	}
 });
