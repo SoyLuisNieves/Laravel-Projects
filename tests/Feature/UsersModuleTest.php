@@ -20,11 +20,15 @@ class UsersModuleTest extends TestCase
     function it_loads_the_user_detail_page(){
     	$this->get('/users/1')
     		->assertStatus(200)
-    		->assertSee('Mostrando detalle del usuario: 1');
+    		->assertSee('Showing users detail: 1');
     }
 
     /** @test */
     function it_loads_new_user_page(){
+
+        // Ver logs de laravel
+        // $this->withoutExceptionHandling();
+
     	$this->get('/users/new')
     		->assertStatus(200)
     		->assertSee('Create new user');
